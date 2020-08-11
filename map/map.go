@@ -59,3 +59,15 @@ func InitMapCap() {
 	fmt.Printf("first value is : %s\n", mapNames["first"])
 	fmt.Printf("third value is : %s\n", mapNames["third"])
 }
+
+// 将切片作为value值
+func InitMapValueSlice() {
+	mp := make(map[string][]string)
+
+	names := []string{"美队", "雷神", "丹妮莉丝", "囧恩"}
+	mp["game_of_thrones"] = names[2:]
+	mp["avengers"] = names[:2]
+
+	fmt.Printf("Game of Thrones contains %v\n", mp["game_of_thrones"])
+	fmt.Printf("Avengers contains %v\n", mp["avengers"])
+}

@@ -9,3 +9,7 @@ func TestInitMap(t *testing.T) {
 func TestInitMapCap(t *testing.T) {
 	InitMapCap()
 }
+
+func TestInitMapValueSlice(t *testing.T) {
+	InitMapValueSlice()
+}
