@@ -13,3 +13,15 @@ func TestInitMapCap(t *testing.T) {
 func TestInitMapValueSlice(t *testing.T) {
 	InitMapValueSlice()
 }
+
+func TestRangeMap(t *testing.T) {
+	RangeMap()
+}
+
+func TestSortMap(t *testing.T) {
+	SortMap()
+}
+
+func TestDeleteItemFromMap(t *testing.T) {
+	DeleteItemFromMap()
+}

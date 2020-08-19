@@ -1,6 +1,9 @@
 package _map
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 /*
 Go语言中 map 是一种特殊的数据结构，一种元素对（pair）的无序集合，pair 对应一个 key（索引）和一个 value（值），
@@ -70,4 +73,49 @@ func InitMapValueSlice() {
 
 	fmt.Printf("Game of Thrones contains %v\n", mp["game_of_thrones"])
 	fmt.Printf("Avengers contains %v\n", mp["avengers"])
+}
+
+// 遍历map
+// 遍历输出元素的顺序与定义时的顺序无关
+func RangeMap() {
+	week := make(map[string]int)
+	week["SUNDAY"] = 0
+	week["MONDAY"] = 1
+	week["TUESDAY"] = 2
+
+	for k, v := range week {
+		// 无序
+		fmt.Printf("key: %s, value: %d\n", k, v)
+	}
+}
+
+// 特定顺序输出
+func SortMap() {
+	week := make(map[string]int)
+	week["SUNDAY"] = 0
+	week["MONDAY"] = 1
+	week["TUESDAY"] = 2
+
+	var weekSlice []string
+	for k := range week {
+		weekSlice = append(weekSlice, k)
+	}
+
+	// 切片排序
+	sort.Strings(weekSlice)
+
+	// 输出排序结果
+	fmt.Println(weekSlice)
+}
+
+func DeleteItemFromMap() {
+	jobs := make(map[string]string)
+	jobs["golang"] = "nice"
+	jobs["java"] = "good"
+	jobs["rust"] = "better"
+
+	fmt.Println(jobs)
+
+	delete(jobs, "java")
+	fmt.Println(jobs)
 }
